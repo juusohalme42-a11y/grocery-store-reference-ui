@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="shopWindow" class="shop-window hidden">
+        <div class="inventory-panel">
+            <div class="topbar">
+                <div class="player-name" id="playerName">Jorma Ukkojenmala</div>
+                <div class="money" id="playerMoney">€ 2,500</div>
+            </div>
+
+            <div class="usage-row">
+                <div class="usage-label">Inventory</div>
+                <div class="usage-value" id="inventoryUsage">1.8kg / 5kg</div>
+            </div>
+
+            <div class="usage-bar">
+                <div class="usage-fill" id="usageFill"></div>
+            </div>
+
+            <div id="inventoryGrid" class="inventory-grid"></div>
+        </div>
+
+        <div class="shop-panel">
+            <div class="shop-header">Shop</div>
+
+            <div id="shopGrid" class="shop-grid"></div>
+
+            <div class="bottom-actions">
+                <button type="button">KÄYTTÄ</button>
+                <button type="button">ANNA</button>
+                <button type="button">SULJE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: transparent;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-window {
+    position: relative;
+    width: 1280px;
+    max-width: calc(100vw - 60px);
+    height: 760px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 18px;
+    padding: 18px 18px 12px 18px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(10, 15, 18, 0.72);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 8px;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.shop-window.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+}
+
+.inventory-panel, .shop-panel {
+    background: rgba(17, 22, 28, 0.8);
+    border: 1px solid rgba(200, 210, 220, 0.12);
+    border-radius: 8px;
+    padding: 12px 12px 14px 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 4px 10px 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 12px;
+}
+
+.player-name {
+    color: #f2f7ff;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.money {
+    color: #dfeaff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.usage-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #d6e5ff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.usage-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.usage-fill {
+    width: 38%;
+    height: 100%;
+    background: linear-gradient(90deg, #7cd8ff, #56f0ad);
+    border-radius: inherit;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.inventory-slot {
+    position: relative;
+    height: 120px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(15, 18, 24, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.inventory-slot .slot-qty {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 10px;
+    color: #dfeeff;
+    font-weight: 700;
+}
+
+.inventory-slot .slot-icon {
+    font-size: 28px;
+    opacity: 0.95;
+}
+
+.inventory-slot .slot-label {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #dfeeff;
+}
+
+.shop-header {
+    text-align: center;
+    color: #edf6ff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 0 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 14px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 10px;
+    padding-bottom: 74px;
+}
+
+.shop-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    background: rgba(20, 25, 30, 0.8);
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    color: #fff;
+    padding: 8px;
+    transition: border-color 0.12s ease, transform 0.12s ease;
+}
+
+.shop-card:hover {
+    border-color: rgba(125, 211, 252, 0.3);
+    transform: translateY(-1px);
+}
+
+.shop-card .icon {
+    font-size: 35px;
+    line-height: 1;
+}
+
+.shop-card .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #edf3ff;
+}
+
+.shop-card .price {
+    font-size: 12px;
+    color: #7dd3fc;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.bottom-actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 16px;
+}
+
+.bottom-actions button {
+    width: 120px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+    color: #edf4ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.12s ease;
+}
+
+.bottom-actions button:hover {
+    background: rgba(125, 211, 252, 0.08);
+}
+
+@media (max-width: 1100px) {
+    .shop-window {
+        width: 1000px;
+        height: 700px;
+    }
+}
